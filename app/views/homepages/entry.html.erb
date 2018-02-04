@@ -15,7 +15,7 @@
     <ul>
       <p><%= prop.description %> </p>
       <% prop.choices.each do |choice| %>
-        <%= radio_button_tag(prop.id, choice.id) %>
+        <%= radio_button_tag("[prop]#{prop.id}", choice.id) %>
         <%= label_tag(prop.id, choice.description) %>
       <% end %>
     </ul>
