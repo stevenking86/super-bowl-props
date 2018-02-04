@@ -1,0 +1,8 @@
+<div class="top">
+  <h1 class="title">Lit AF Super Bowl Prop Bets</h1>
+</div>
+
+<h2><%= @user.name %> Score: <% @user.score %></h2>
+<% @props.each do |prop| %>
+  <p><%= prop.description %> - Your pick: <%= @user.prop_pick(prop).try(:description) %></p>
+<% end %>

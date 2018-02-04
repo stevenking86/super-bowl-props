@@ -5,3 +5,10 @@
 <div class="links">
   <h2><%= link_to "Create Your Entry", entry_path %></h2>
 </div>
+
+<div class="entries">
+  <h2>View Entries</h2>
+  <% @users.each do |user| %>
+    <h3><%= link_to user.name, user_path(user) %> - Score: <%= user.score %></h3>
+  <% end %>
+</div>
