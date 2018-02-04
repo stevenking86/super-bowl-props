@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
   end
 
   def prop_pick(prop)
-    binding.pry
     prop.choices.select { |c| c.id.in?(choice_ids) }.try(:first)
   end
 
