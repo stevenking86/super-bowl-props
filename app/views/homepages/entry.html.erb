@@ -1,0 +1,25 @@
+<div class="top">
+  <h1 class="title">Lit AF Super Bowl Prop Bets</h1>
+</div>
+
+<div class="heading">
+  <h2>Make Your Picks</h2>
+</div>
+
+
+<%= form_tag("/create_entry", method: "post") do %>
+  <%= label_tag(:name) %>
+  <%= text_field_tag(:name) %>
+
+  <% @props.each do |prop| %>
+    <ul>
+      <p><%= prop.description %> </p>
+      <% prop.choices.each do |choice| %>
+        <%= radio_button_tag(prop.id, choice.id) %>
+        <%= label_tag(prop.id, choice.description) %>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <input class="button-primary" type="submit" value="Submit">
+<% end %>
